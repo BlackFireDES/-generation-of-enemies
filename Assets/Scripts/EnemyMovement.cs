@@ -5,15 +5,15 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] float _speed;
+    [SerializeField]private Transform _centerTarget;
 
-    private Transform _centerTarget;
     private Vector3 _normal;
     private bool _isMoove;
     private int _framePerSecond;
 
     private void Awake()
-    {               
-        _centerTarget = GameObject.Find("Target").transform;
+    {
+        Debug.Log(_centerTarget.position);
         _isMoove = true;
     }
 
@@ -36,7 +36,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.GetComponent<Terrain>())
+        if (collision.collider.TryGetComponent(out Terrain terrain))
         {
             _normal = collision.contacts[0].normal;
         }

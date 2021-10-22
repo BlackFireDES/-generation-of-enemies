@@ -19,10 +19,12 @@ public class Spawners : MonoBehaviour
 
     private IEnumerator Spawn()
     {
+        WaitForSeconds waitForSeconds = new WaitForSeconds(2);
+
         while (_isWorking)
         {
             Instantiate(_enemy, _positions[Random.Range(1, _positions.Length)].position, Quaternion.identity);
-            yield return new WaitForSeconds(2);
+            yield return waitForSeconds;
         }
     }
 }

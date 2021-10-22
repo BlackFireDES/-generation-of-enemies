@@ -1,4 +1,4 @@
-Base path: 'I:/Programs/Unity/2021.1.12f1/Editor/Data', plugins path 'I:/Programs/Unity/2021.1.12f1/Editor/Data/PlaybackEngines'
+Base path: 'U:/UnityEditors/2021.1.25f1/Editor/Data', plugins path 'U:/UnityEditors/2021.1.25f1/Editor/Data/PlaybackEngines'
 Cmd: initializeCompiler
 
 Cmd: shutdown
