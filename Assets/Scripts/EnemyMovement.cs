@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] float _speed;
-    [SerializeField]private Transform _centerTarget;
+    [SerializeField] private float _speed;
+    [SerializeField] private Transform _centerTarget;
 
     private Vector3 _normal;
     private bool _isMoove;
@@ -25,11 +25,11 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
-        transform.position += Project() * Time.deltaTime * _speed;
+        transform.position += CalculateProject() * Time.deltaTime * _speed;
         _framePerSecond = (int)(1 / Time.deltaTime);
     }
 
-    private Vector3 Project()
+    private Vector3 CalculateProject()
     {
         return transform.forward - Vector3.Dot(transform.forward, _normal) * _normal;
     }
