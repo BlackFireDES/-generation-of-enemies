@@ -13,7 +13,6 @@ public class EnemyMovement : MonoBehaviour
 
     private void Awake()
     {
-        Debug.Log(_centerTarget.position);
         _isMoove = true;
     }
 

@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpawners : MonoBehaviour
+public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject _enemy;
-    [SerializeField] private GameObject _enemySpawners;
+    [SerializeField] private Enemy _enemy;
+    [SerializeField] private GameObject _spawnPoints;
 
     private Transform[] _positions;
     private bool _isWorking;
@@ -13,7 +13,7 @@ public class EnemySpawners : MonoBehaviour
     private void Start()
     {
         _isWorking = true;
-        _positions = _enemySpawners.GetComponentsInChildren<Transform>();
+        _positions = _spawnPoints.GetComponentsInChildren<Transform>();
         StartCoroutine(Spawn());
     }
 
